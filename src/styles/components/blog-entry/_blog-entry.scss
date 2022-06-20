@@ -27,6 +27,10 @@
     &__image {
         display: block;
         width: 100%;
+        height: helpers.px2rem(210px);
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         margin-top: 0;
 
         @include responsive.until('sm') {

@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "watch": "npm-watch",
-    "build:dev": "webpack --config webpack.config.js",
+    "build:dev": "webpack --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
-    "build:dev:watch": "webpack --config webpack.watch.config.js"
+    "build:dev:watch": "webpack --config webpack.dev.config.js"
   },
   "author": "",
   "license": "ISC",

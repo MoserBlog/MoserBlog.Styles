@@ -2,6 +2,7 @@ const path = require('path');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
     mode: 'development',
     entry: {
@@ -10,7 +11,7 @@ module.exports = {
         details: './src/details.js'
     },
     output: {
-        path: path.resolve(__dirname, '../Moser.Blog.Web/wwwroot/dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
 
@@ -55,10 +56,5 @@ module.exports = {
                 ]
             }
         ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].bundle.css'
-        })
-    ]
+    }
 }
