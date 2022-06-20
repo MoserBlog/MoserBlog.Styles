@@ -1,0 +1,9 @@
+@use '../../utilities/helpers';
+
+
+.page-header {
+    margin-top: 0;
+    padding-top: helpers.px2rem(25px);
+    padding-bottom: helpers.px2rem(25px);
+    border: none;
+}

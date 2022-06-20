@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+
+$viewports: (
+    'xs': 0em,
+    'sm': 48em,
+    'md': 62em,
+    'lg': 75em
+);
+
+$columns: (
+    'min': 1,
+    'max': 12
+);
+
+
+
+@mixin from($key) {
+    @media only screen and (min-width: map.get($viewports, $key)) {
+        @content;
+    }
+}
+
+@mixin until($key) {
+    @media only screen and (max-width: map.get($viewports, $key)) {
+        @content;
+    }
+}

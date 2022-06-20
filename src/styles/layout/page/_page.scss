@@ -1,0 +1,14 @@
+@use '../../base/base';
+@use '../../base/colors';
+@use '../../base/font';
+
+
+.page {
+    @include font.ubuntu-regular;
+    
+    font-size: base.$pixel-base;
+    margin: 0;
+    padding: 0;
+    color: colors.$font-color-default;
+    background-color: colors.$background-color;
+}

@@ -1,0 +1,10 @@
+@use 'sass:math';
+@use '../base/base';
+
+
+/*
+ * px2rem - Calculates the rem-Value of a given px-Value
+ */
+ @function px2rem($px) {
+    @return #{math.div($px, base.$pixel-base)}rem;
+}

@@ -1,0 +1,163 @@
+@use '../../base/colors';
+@use '../../utilities/helpers';
+@use '../../base/responsive';
+
+
+.blog-detail {
+    margin-bottom: helpers.px2rem(30px);
+    background-color: colors.$white;
+
+    &__image {
+        height: helpers.px2rem(300px);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-size: cover;
+    }
+
+    &__title {
+        padding-top: helpers.px2rem(30px);
+        text-align: center;
+    }
+
+    &__info {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+
+        &-item {
+            font-size: helpers.px2rem(12px);
+            color: colors.$font-color-silent;
+
+            &-link {
+                transition: all .2s ease-in-out;
+                color: colors.$font-color-title;
+                text-decoration: none;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+
+            &::after {
+                content: "/";
+                margin-left: helpers.px2rem(5px);
+                margin-right: helpers.px2rem(3px);
+            }
+            
+            &:last-child::after {
+                content: "";
+                margin-left: 0;
+            }
+        }
+    }
+    
+    &__content {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: helpers.px2rem(20px) 0;
+        line-height: helpers.px2rem(28px);
+        text-align: justify;
+
+        &__link {
+            transition: all .2s ease-in-out;
+            color: colors.$font-color-title;
+            text-decoration: none;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: none;
+                opacity: .8;
+            }
+        }
+
+        &-imagefull {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__footer {
+        padding-left: helpers.px2rem(30px);
+        padding-right: helpers.px2rem(30px);
+       
+        &-tags {
+            padding-top: helpers.px2rem(30px);
+            padding-bottom: helpers.px2rem(30px);
+            border-top: helpers.px2rem(1px) dotted colors.$separations;
+
+            &__title {
+                float: left;
+                margin: 0;
+                padding: helpers.px2rem(5px) helpers.px2rem(15px) helpers.px2rem(5px) 0;
+                font-size: helpers.px2rem(14px);
+                text-transform: uppercase;
+                line-height: 1;
+                border: helpers.px2rem(1px) solid colors.$white;
+            }
+    
+            &__list {
+                float: left;
+                line-height: 1;
+    
+                &-item {
+                    float: left;
+                    margin-right: helpers.px2rem(4px);
+                    padding: helpers.px2rem(5px) helpers.px2rem(10px);
+                    border: helpers.px2rem(1px) solid colors.$separations;
+                    font-size: helpers.px2rem(14px);
+                    color: colors.$font-color-title;
+                    text-decoration: none;
+                    line-height: 1;
+                    transition: all .2s ease-in-out;
+    
+                    &:hover {
+                        border-color: colors.$font-color-title;
+                    }
+                }
+            }
+
+            &::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+
+        &-author {
+            padding: helpers.px2rem(30px) 0;
+            border-top: helpers.px2rem(1px) dotted colors.$separations;
+
+            @include responsive.until("sm") {
+                padding-top: 0;
+            }
+    
+            &-avatar {
+                width: 100%;
+                float: left;
+                max-width: helpers.px2rem(150px);
+    
+                @include responsive.until("sm") {
+                    display: none;
+                }
+            }
+    
+            &-info {
+                margin-left: helpers.px2rem(180px);
+
+                @include responsive.until("sm") {
+                    margin-left: 0;
+                }
+    
+                &--title {
+                    font-size: helpers.px2rem(16px);
+                    font-weight: 700;
+                }
+    
+                &--content {
+                    font-size: helpers.px2rem(14px);
+                }
+            }
+        }
+    }
+}

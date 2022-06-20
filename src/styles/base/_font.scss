@@ -1,0 +1,94 @@
+/*
+ * Ubuntu
+ * https://fonts.google.com/specimen/Ubuntu
+ */
+
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    font-weight: 400;
+    src: url('../assets/fonts/ubuntu/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    font-weight: 700;
+    src: url('../assets/fonts/ubuntu/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Italic';
+    font-weight: 400;
+    font-style: italic;
+    src: url('../assets/fonts/ubuntu/Ubuntu-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Light';
+    font-weight: 300;
+    src: url('../assets/fonts/ubuntu/Ubuntu-Light.ttf');
+}
+
+
+@mixin ubuntu-regular {
+    font-family: 'Ubuntu-Regular', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+@mixin ubuntu-bold {
+    font-family: 'Ubuntu-Bold', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+@mixin ubuntu-italic {
+    font-family: 'Ubuntu-Italic', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin ubuntu-light {
+    font-family: 'Ubuntu-Light', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+
+
+
+
+/*
+ * Josefin-Sans
+ * https://fonts.google.com/specimen/Josefin+Sans
+ */
+
+@font-face {
+    font-family: 'JosefinSans-Thin';
+    font-weight: 100;
+    src: url('../assets/fonts/josefinsans/JosefinSans-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'JosefinSans-ExtraLight';
+    font-weight: 200;
+    src: url('../assets/fonts/josefinsans/JosefinSans-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: 'JosefinSans-Light';
+    font-weight: 300;
+    src: url('../assets/fonts/josefinsans/JosefinSans-Light.ttf');
+}
+
+
+@mixin josefinsans-thin {
+    font-family: 'JosefinSans-Thin', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+@mixin josefinsans-extralight {
+    font-family: 'JosefinSans-ExtraLight', Arial, Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+@mixin josefinsans-light {
+    font-family: 'JosefinSans-Light', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}

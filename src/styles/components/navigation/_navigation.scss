@@ -1,0 +1,58 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+@use '../../base/responsive';
+@use '../../base/font';
+
+
+.navigation {
+    position: relative;
+
+    @include responsive.until('md') {
+        margin-top: helpers.px2rem(25px);
+        margin-left: helpers.px2rem(20px);
+        margin-right: helpers.px2rem(20px);
+    }
+
+    &__items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    &__item {
+        display: inline-block;
+        position: relative;
+        padding-bottom: helpers.px2rem(10px);
+
+        &-link {
+            color: colors.$font-color-title;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &--active {
+            @include font.ubuntu-bold;
+
+            &::after {
+                @include font.ubuntu-regular;
+            }
+        }
+
+        &::after {
+            content: "/";
+            margin-left: helpers.px2rem(5px);
+            margin-right: helpers.px2rem(5px);
+        }
+
+        &:last-child::after {
+            content: "";
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use '../../base/responsive';
+
+.page-content {
+    /* Just a Mockup for the Moment */
+    @include responsive.from('sm') {
+        width: 60%;
+        margin-left: 20%;
+    }
+}

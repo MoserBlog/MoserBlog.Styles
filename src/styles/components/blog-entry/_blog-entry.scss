@@ -1,0 +1,114 @@
+@use '../../base/colors';
+@use '../../utilities/helpers';
+@use '../../base/responsive';
+
+
+.blog-entry {
+    margin-bottom: helpers.px2rem(30px);
+    background-color: colors.$white;
+    padding-right: helpers.px2rem(15px);
+
+    @include responsive.until('sm') {
+        margin-bottom: helpers.px2rem(50px);
+        padding: 0;
+    }
+
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &__content {
+        padding-left: helpers.px2rem(25px);
+        padding-right: helpers.px2rem(40px);
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        margin-top: 0;
+
+        @include responsive.until('sm') {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        padding-top: 0;
+        font-size: helpers.px2rem(22px);
+        line-height: helpers.px2rem(15px);
+    }
+
+    &__description {
+        padding: helpers.px2rem(20px) 0;
+        line-height: helpers.px2rem(28px);
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        color: colors.$font-color-title;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+
+    &__footer {
+        padding-bottom: helpers.px2rem(30px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: helpers.px2rem(20px);
+
+        &-link {
+            font-size: helpers.px2rem(14px);
+            text-transform: uppercase;
+        }
+    }
+
+    &__info {
+        padding-bottom: helpers.px2rem(10px);
+        padding-top: helpers.px2rem(30px);
+        text-align: center;
+
+        &-item {
+            font-size: helpers.px2rem(12px);
+            color: colors.$font-color-silent;
+
+            &::after {
+                content: "/";
+                margin-left: helpers.px2rem(5px);
+                margin-right: helpers.px2rem(3px);
+            }
+    
+            &:last-child::after {
+                content: "";
+                margin-left: 0;
+            }
+        }
+
+        @include responsive.until('sm') {
+            padding-top: helpers.px2rem(10px);
+        }
+
+        @include responsive.until('md') {
+            padding: 0;
+        }
+    }
+    
+    &__info,
+    &__title {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+}

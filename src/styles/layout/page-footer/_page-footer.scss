@@ -1,0 +1,81 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+@use '../../base/responsive';
+@use '../../base/font';
+
+
+.page-footer {
+    padding-left: helpers.px2rem(75px);
+    padding-right: helpers.px2rem(75px);
+    padding-top: helpers.px2rem(50px);
+    padding-bottom: helpers.px2rem(40px);
+    background-color: colors.$white;
+
+    @include responsive.until('sm') {
+        padding-left: helpers.px2rem(30px);
+        padding-right: helpers.px2rem(30px);
+    }
+
+    &__title {
+        @include font.ubuntu-bold;
+
+        margin-top: helpers.px2rem(40px);
+        margin-bottom: helpers.px2rem(20px);
+        font-size: helpers.px2rem(16px);
+        text-transform: uppercase;
+    }
+
+    &__top {
+        padding-bottom: helpers.px2rem(40px);
+        border-bottom: helpers.px2rem(1px) dotted colors.$separations;
+
+        &-about {
+            max-width: helpers.px2rem(360px);
+        }
+    }
+
+    &__nav-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__nav-item {
+        margin-bottom: helpers.px2rem(5px);
+
+        &-link {
+            color: colors.$font-color-title;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+
+    &__bottom {
+        padding-top: helpers.px2rem(40px);
+
+        &-copyright {
+            font-size: helpers.px2rem(14px);
+        }
+
+        &-legal {
+            padding-bottom: 0;
+            text-align: right;
+
+            @include responsive.until('sm') {
+                text-align: left;
+            }
+
+            &-link {
+                margin-right: helpers.px2rem(10px);
+                color: colors.$font-color-title;
+                text-decoration: none;
+            }
+        }
+    }
+
+}

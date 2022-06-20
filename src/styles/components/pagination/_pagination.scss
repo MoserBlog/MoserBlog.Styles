@@ -1,0 +1,32 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+@use '../../base/font';
+
+
+.pagination {
+    &__items {
+        text-align: center;
+        margin: 0;
+        list-style: none;
+        padding: helpers.px2rem(30px) 0 helpers.px2rem(60px);
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: helpers.px2rem(10px);
+
+        &--active {
+            @include font.ubuntu-bold;
+        }
+
+        &-link {
+            color: colors.$font-color-title;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

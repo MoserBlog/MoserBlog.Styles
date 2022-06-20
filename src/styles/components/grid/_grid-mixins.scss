@@ -1,0 +1,23 @@
+@use 'sass:map';
+
+@use '../../base/responsive';
+
+
+@mixin build-column($value, $breakpoint: false) {
+    $type: '';
+    
+    @if $breakpoint != false {
+        $type: '#{$breakpoint}-';
+    }
+
+    .grid__col--#{$type}#{$value} {
+        grid-column-end: span $value;
+    }
+}
+
+
+@mixin build-columns($breakpoint: false) {
+    @for $i from map.get(responsive.$columns, 'min') through map.get(responsive.$columns, 'max') {
+        @include build-column($i, $breakpoint);
+    }
+}

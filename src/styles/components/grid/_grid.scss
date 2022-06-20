@@ -1,0 +1,21 @@
+@use '../../base/responsive';
+
+@use './grid-mixins';
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1vmax;
+    grid-row-gap: 1vmax;
+    grid-auto-flow: dense;
+}
+
+
+@include grid-mixins.build-columns;
+
+@each $key, $value in responsive.$viewports {
+    @include responsive.from($key) {
+        @include grid-mixins.build-columns($key);
+    }
+}
