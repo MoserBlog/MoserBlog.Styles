@@ -47,6 +47,7 @@
             color: colors.$font-color-title;
             text-decoration: none;
             transition: all .2s ease-in-out;
+            cursor: pointer;
 
             &:hover {
                 opacity: .8;
@@ -74,6 +75,7 @@
                 margin-right: helpers.px2rem(10px);
                 color: colors.$font-color-title;
                 text-decoration: none;
+                cursor: pointer;
             }
         }
     }
