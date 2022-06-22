@@ -4,6 +4,7 @@ const webpackConfig = require('./webpack.config');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(webpackConfig, {
     mode: 'production',
@@ -19,6 +20,7 @@ module.exports = merge(webpackConfig, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].bundle.min.css'
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 });

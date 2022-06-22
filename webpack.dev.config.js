@@ -3,6 +3,7 @@ const webpackConfig = require('./webpack.config');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(webpackConfig, {
     plugins: [
@@ -13,6 +14,7 @@ module.exports = merge(webpackConfig, {
             patterns: [
               { from: "src/assets/demo" }
             ]
-        })
+        }),
+        new CleanWebpackPlugin()
     ]
 });
