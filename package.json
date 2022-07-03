@@ -1,6 +1,6 @@
 {
-  "name": "moserblog-styles",
-  "version": "1.0.0",
+  "name": "moserblogweb-styles",
+  "version": "1.0.2",
   "description": "Frontend Library for MoserBlog",
   "repository": {
     "type": "git",
