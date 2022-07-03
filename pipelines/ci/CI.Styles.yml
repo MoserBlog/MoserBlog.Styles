@@ -15,8 +15,10 @@ pool:
 
 stages:
   - stage: A
+    displayName: Install and build
     jobs:
       - job: A1
+        displayName: Install Node Tools
         steps:
         - task: NodeTool@0
           inputs:
@@ -24,6 +26,7 @@ stages:
           displayName: 'Install Node.js'
 
       - job: A2
+        displayName: Install and build Package
         steps:
         - script: |
             npm install
@@ -32,8 +35,10 @@ stages:
 
   - stage: B
     condition: and(succeeded(), eq(variables.isMain, 'true'))
+    displayName: Publish Package
     jobs: 
       - job: B1
+        displayName: Publish Package
         steps:
         - task: Npm@1
           inputs:
