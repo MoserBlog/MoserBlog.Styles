@@ -5,16 +5,43 @@ trigger:
 - feature/*
 - release/*
 
+
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build:prod
-  displayName: 'npm install and build'
+stages:
+  - stage: A
+    displayName: Install and build
+    jobs:
+      - job: A1
+        displayName: Install Node Tools
+        steps:
+        - task: NodeTool@0
+          inputs:
+            versionSpec: '16.x'
+          displayName: 'Install Node.js'
+
+      - job: A2
+        displayName: Install and build Package
+        steps:
+        - script: |
+            npm install
+            npm run build:prod
+          displayName: 'npm install and build'
+
+  - stage: B
+    condition: and(succeeded(), eq(variables.isMain, 'true'))
+    displayName: Publish Package
+    jobs: 
+      - job: B1
+        displayName: Publish Package
+        steps:
+        - task: Npm@1
+          inputs:
+            command: 'publish'
+            publishEndpoint: 'npm Automation'
+          displayName: 'npm publish new version'
