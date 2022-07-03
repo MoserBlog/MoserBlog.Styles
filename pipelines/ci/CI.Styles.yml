@@ -14,26 +14,26 @@ pool:
 
 
 stages:
-  - stage: Install and build
+  - stage: A
     jobs:
-      - job: Install Node Tools
+      - job: A1
         steps:
         - task: NodeTool@0
           inputs:
             versionSpec: '16.x'
           displayName: 'Install Node.js'
 
-      - job: Install and build Package
+      - job: A2
         steps:
         - script: |
             npm install
             npm run build:prod
           displayName: 'npm install and build'
 
-  - stage: Publish Package
+  - stage: B
     condition: and(succeeded(), eq(variables.isMain, 'true'))
     jobs: 
-      - job: Publish Package
+      - job: B1
         steps:
         - task: Npm@1
           inputs:
