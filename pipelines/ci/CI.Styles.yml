@@ -12,21 +12,31 @@ variables:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build:prod
-  displayName: 'npm install and build'
+stages:
+  - stage: Install and build
+    jobs:
+      - job: Install Node Tools
+        steps:
+        - task: NodeTool@0
+          inputs:
+            versionSpec: '16.x'
+          displayName: 'Install Node.js'
 
+      - job: Install and build Package
+        steps:
+        - script: |
+            npm install
+            npm run build:prod
+          displayName: 'npm install and build'
 
-- task: Npm@1
-  condition: and(succeeded(), eq(variables.isMain, 'true'))
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'npm Automation'
-  displayName: 'npm publish new version'
+  - stage: Publish Package
+    condition: and(succeeded(), eq(variables.isMain, 'true'))
+    jobs: 
+      - job: Publish Package
+        steps:
+        - task: Npm@1
+          inputs:
+            command: 'publish'
+            publishEndpoint: 'npm Automation'
+          displayName: 'npm publish new version'
