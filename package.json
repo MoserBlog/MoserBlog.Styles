@@ -1,14 +1,18 @@
 {
-  "name": "moserblog.styles",
+  "name": "moserblog-styles",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend Library for MoserBlog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoserBlog/MoserBlog.Styles.git"
+  },
+  "author": "philippmos",
   "scripts": {
     "watch": "npm-watch",
     "build:dev": "webpack --config webpack.dev.config.js",
     "build:prod": "webpack --config webpack.prod.config.js",
     "build:dev:watch": "webpack --config webpack.dev.config.js"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.17.2",
