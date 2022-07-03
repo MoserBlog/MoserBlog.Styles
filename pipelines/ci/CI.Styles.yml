@@ -5,6 +5,10 @@ trigger:
 - feature/*
 - release/*
 
+
+variables:
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
 pool:
   vmImage: ubuntu-latest
 
@@ -21,6 +25,7 @@ steps:
 
 
 - task: Npm@1
+  condition: and(success(), eq(variables.isMain, 'true'))
   inputs:
     command: 'publish'
     publishEndpoint: 'npm Automation'
