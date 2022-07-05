@@ -14,34 +14,34 @@ pool:
 
 
 stages:
-  - stage: A
-    displayName: Install and build
-    jobs:
-      - job: A1
-        displayName: Install Node Tools
-        steps:
-        - task: NodeTool@0
-          inputs:
-            versionSpec: '16.x'
-          displayName: 'Install Node.js'
+- stage: InstallAndBuild
+  displayName: Install and build
+  jobs:
+    - job: InstallNode
+      displayName: Install Node Tools
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '16.x'
+        displayName: 'Install Node.js'
 
-      - job: A2
-        displayName: Install and build Package
-        steps:
-        - script: |
-            npm install
-            npm run build:prod
-          displayName: 'npm install and build'
+    - job: InstallAndBuild
+      displayName: Install and build Package
+      steps:
+      - script: |
+          npm install
+          npm run build:prod
+        displayName: 'npm install and build'
 
-  - stage: B
-    condition: and(succeeded(), eq(variables.isMain, 'true'))
-    displayName: Publish Package
-    jobs: 
-      - job: B1
-        displayName: Publish Package
-        steps:
-        - task: Npm@1
-          inputs:
-            command: 'publish'
-            publishEndpoint: 'npm Automation'
-          displayName: 'npm publish new version'
+- stage: Publish
+  condition: and(succeeded(), eq(variables.isMain, 'true'))
+  displayName: Publish Package
+  jobs: 
+    - job: Publish
+      displayName: Publish Package
+      steps:
+      - task: Npm@1
+        inputs:
+          command: 'publish'
+          publishEndpoint: 'npm Automation'
+        displayName: 'npm publish new version'
