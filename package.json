@@ -2,6 +2,7 @@
   "name": "@philippmos/moserblog-styles",
   "version": "1.0.0",
   "description": "Frontend Library for MoserBlog",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MoserBlog/MoserBlog.Styles.git"
