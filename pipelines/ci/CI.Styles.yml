@@ -34,7 +34,7 @@ stages:
         displayName: 'npm install and build'
 
 - stage: Publish
-  condition: and(succeeded(), eq(variables.isMain, 'true'))
+  # condition: and(succeeded(), eq(variables.isMain, 'true'))
   displayName: Publish Package
   jobs: 
     - job: Publish
