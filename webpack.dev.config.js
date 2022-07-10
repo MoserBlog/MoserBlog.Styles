@@ -12,7 +12,7 @@ module.exports = merge(webpackConfig, {
         }),
         new CopyPlugin({
             patterns: [
-              { from: "src/assets/demo" }
+              { from: "src/demo" }
             ]
         }),
         new CleanWebpackPlugin()
