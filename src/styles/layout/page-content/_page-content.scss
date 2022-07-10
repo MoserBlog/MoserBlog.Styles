@@ -1,3 +1,4 @@
+@use '../../utilities/helpers';
 @use '../../base/responsive';
 
 .page-content {
@@ -5,5 +6,6 @@
     @include responsive.from('sm') {
         width: 60%;
         margin-left: 20%;
+        margin-bottom: helpers.px2rem(50px);
     }
 }
