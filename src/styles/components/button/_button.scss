@@ -1,0 +1,12 @@
+.button {
+    padding: 10px 25px;
+    border: 0;
+    color: #3f3f3f;
+    background-color: #dcdcdc;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover, &:focus, &:active {
+        opacity: 0.8;
+    }
+}
