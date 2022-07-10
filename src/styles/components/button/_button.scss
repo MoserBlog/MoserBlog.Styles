@@ -1,8 +1,11 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+
 .button {
-    padding: 10px 25px;
+    padding: helpers.px2rem(10px) helpers.px2rem(25px);
     border: 0;
-    color: #3f3f3f;
-    background-color: #dcdcdc;
+    color: colors.$font-color-default;
+    background-color: colors.$separations;
     text-transform: uppercase;
     cursor: pointer;
 

@@ -1,0 +1,33 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+
+
+.input {
+    width: 100%;
+    height: helpers.px2rem(45px);
+    padding: 0 helpers.px2rem(14px);
+    border: helpers.px2rem(1px) solid colors.$separations;
+
+
+    &-textarea {
+        width: 100%;
+        height: helpers.px2rem(150px);
+        padding: helpers.px2rem(8px) helpers.px2rem(8px) helpers.px2rem(8px) helpers.px2rem(18px);
+        border: helpers.px2rem(1px) solid colors.$separations;
+        resize: none;
+        overflow: auto;
+    }
+
+    &-group {
+        display: block;
+        margin-bottom: helpers.px2rem(20px);
+    }
+
+    &-label {
+        display: block;
+        font-size: helpers.px2rem(12px);
+        font-weight: 400;
+        margin-bottom: helpers.px2rem(5px);
+        color: colors.$font-color-silent;
+    }
+}
