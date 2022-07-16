@@ -7,9 +7,19 @@
     margin-bottom: helpers.px2rem(30px);
     background-color: colors.$white;
     padding-right: helpers.px2rem(15px);
+    transition: all .25s ease-in-out;
+    box-shadow:
+        colors.$shadow-1-dark helpers.px2rem(0px) helpers.px2rem(4px) helpers.px2rem(8px) helpers.px2rem(-2px),
+        colors.$shadow-1-bright helpers.px2rem(0px) helpers.px2rem(0px) helpers.px2rem(0px) helpers.px2rem(1px);
+
+    &:hover {
+        box-shadow:
+            colors.$shadow-2-dark helpers.px2rem(0px) helpers.px2rem(7px) helpers.px2rem(29px) helpers.px2rem(0px),
+            colors.$shadow-2-bright helpers.px2rem(0px) helpers.px2rem(0px) helpers.px2rem(0px) helpers.px2rem(1px);
+    }
 
     @include responsive.until('sm') {
-        margin-bottom: helpers.px2rem(50px);
+        margin: 0 helpers.px2rem(10px) helpers.px2rem(50px) helpers.px2rem(10px);
         padding: 0;
     }
 
@@ -93,7 +103,7 @@
                 margin-left: helpers.px2rem(5px);
                 margin-right: helpers.px2rem(3px);
             }
-    
+
             &:last-child::after {
                 content: "";
                 margin-left: 0;
@@ -108,7 +118,7 @@
             padding: 0;
         }
     }
-    
+
     &__info,
     &__title {
         padding-left: 0;

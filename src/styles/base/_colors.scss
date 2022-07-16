@@ -1,10 +1,21 @@
 $white: #ffffff;
 $black: #000000;
 
-$font-color-default: #3f3f3f;
-$font-color-title: #262626;
-$font-color-silent: #777777;
+$gray-default: #3f3f3f;
+$gray-dark: #262626;
+$gray-silent: #777777;
+
+$font-color-default: $gray-default;
+$font-color-title: $gray-dark;
+$font-color-silent: $gray-silent;
 
 $background-color: #f5f5f5;
 
 $separations: #dcdcdc;
+
+
+$shadow-1-dark: rgba(9, 30, 66, 0.25);
+$shadow-1-bright: rgba(9, 30, 66, 0.08);
+
+$shadow-2-dark: rgba(100, 100, 111, 0.25);
+$shadow-2-bright: $shadow-1-bright;
