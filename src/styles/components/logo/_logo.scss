@@ -6,8 +6,11 @@
 
 .logo {
     margin-top: 0;
-    margin-bottom: helpers.px2rem(15px);
     text-align: center;
+
+    @include responsive.from('sm') {
+        margin-bottom: helpers.px2rem(15px);
+    }
 
     &__link {
         @include font.josefinsans-light;
@@ -20,7 +23,7 @@
         cursor: pointer;
 
         &:hover {
-            opacity: 0.8;
+            opacity: .8;
         }
 
         @include responsive.until('sm') {
@@ -29,10 +32,10 @@
     }
 
     &__image {
-        width: helpers.px2rem(100px);
+        height: helpers.px2rem(60px);
 
         @include responsive.until('sm') {
-            width: helpers.px2rem(80px);
+            height: helpers.px2rem(50px);
         }
     }
 
