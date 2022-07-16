@@ -8,7 +8,7 @@
     position: relative;
 
     @include responsive.until('md') {
-        margin-top: helpers.px2rem(25px);
+        margin-top: helpers.px2rem(15px);
         margin-left: helpers.px2rem(20px);
         margin-right: helpers.px2rem(20px);
     }

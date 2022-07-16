@@ -1,0 +1,49 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+@use '../../base/font';
+
+
+.input {
+    @include font.ubuntu-regular;
+
+    width: 100%;
+    height: helpers.px2rem(45px);
+    padding: 0 helpers.px2rem(14px);
+    border: helpers.px2rem(1px) solid colors.$separations;
+    outline: 0;
+    transition: all .25s ease-in-out;
+
+    &:focus, &:active {
+        border-color: colors.$black;
+    }
+
+    &-textarea {
+        @include font.ubuntu-regular;
+
+        width: 100%;
+        height: helpers.px2rem(150px);
+        padding: helpers.px2rem(7px) helpers.px2rem(12px);
+        border: helpers.px2rem(1px) solid colors.$separations;
+        resize: none;
+        overflow: auto;
+        outline: 0;
+        transition: all .25s ease-in-out;
+    
+        &:focus, &:active {
+            border-color: colors.$black;
+        }
+    }
+
+    &-group {
+        display: block;
+        margin-bottom: helpers.px2rem(20px);
+    }
+
+    &-label {
+        display: block;
+        font-size: helpers.px2rem(12px);
+        font-weight: 400;
+        margin-bottom: helpers.px2rem(5px);
+        color: colors.$font-color-silent;
+    }
+}

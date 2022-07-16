@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MoserBlog.Styles</title>
+
+        <meta name="robots" content="noindex" />
+
+        <link rel="stylesheet" href="base.bundle.css" />
+        <link rel="stylesheet" href="details.bundle.css" />
+        
+    </head>
+    <body class="page">
+
+        <header class="page-header">
+            <div class="logo">
+                <a class="logo__link">
+                    <img class="logo__image" src="https://moserblog.blob.core.windows.net/public/moserblog-logo.svg">
+                </a>
+            </div>
+        
+            <nav class="navigation">
+                <ul class="navigation__items">
+                    <li class="navigation__item navigation__item--active">
+                        <a class="navigation__item-link">Home</a>
+                    </li>
+
+                    <li class="navigation__item">
+                        <a class="navigation__item-link">Blog</a>
+                    </li>
+
+                    <li class="navigation__item">
+                        <a class="navigation__item-link">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>        
+        
+
+        <main class="page-content">
+            
+            <div class="grid">
+                <div class="grid__col--12">
+                    <div class="blog-detail">
+                        <div class="blog-detail__image lazy" data-bg="https://via.placeholder.com/1000x350"></div>
+                               
+                        <div class="blog-detail__title">
+                            <h2>BlogTitle</h2>
+                        </div>
+                        <div class="blog-detail__info">
+                            <span class="blog-detail__info-item">By <a href="#" class="blog-detail__info-item-link">Max Mustermann</a></span>
+                            <span class="blog-detail__info-item">dd.MM.yyyy</span>
+                            <span class="blog-detail__info-item"><a href="#" class="blog-detail__info-item-link">10 Comments</a></span>
+                        </div>
+                        <div class="blog-detail__content">
+                            
+                        </div>
+                        <div class="blog-detail__footer">
+                            <div class="blog-detail__footer-tags">
+                                <h3 class="blog-detail__footer-tags__title">Tags:</h3>
+                                <div class="blog-detail__footer-tags__list">
+                                    <a class="blog-detail__footer-tags__list-item" href="#">Category1</a>
+                                    <a class="blog-detail__footer-tags__list-item" href="#">Category2</a>
+                                    <a class="blog-detail__footer-tags__list-item" href="#">Category3</a>
+                                    
+                                </div>
+                            </div>
+            
+                            <div class="blog-detail__footer-author">
+                                <div class="blog-detail__footer-author-avatar">
+                                    <img class="lazy" src="" data-src="https://via.placeholder.com/100" alt="@Model.Author.Name">
+                                </div>
+                                <div class="blog-detail__footer-author-info">
+                                    <h5 class="blog-detail__footer-author-info--title">Written by Max Mustermann</h5>
+                                    <p class="blog-detail__footer-author-info--content">Author Description</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+        <footer class="page-footer">
+            <div class="grid  page-footer__top">
+            <div class="grid__col--sm-6 grid__col--xs-12">
+                <div class="page-footer__top-about">
+                    <h4 class="page-footer__title">MoserBlog</h4>
+                    <p>
+                        <a class="page-footer__nav-item-link" href="" target="_blank" rel="nofollow noopener">
+                            <span class="icon-github"></span>
+                            <span class="">GitHub</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="grid__col--sm-3 grid__col--xs-12">
+                <h4 class="page-footer__title">More Links</h4>
+                <nav class="page-footer__nav">
+                    <ul class="page-footer__nav-items">
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 1</a>
+                        </li>
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 2</a>
+                        </li>
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>        
+            <div class="grid__col--sm-3 grid__col--xs-12">
+                <h4 class="page-footer__title">More Links</h4>
+                <nav class="page-footer__nav">
+                    <ul class="page-footer__nav-items">
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 1</a>
+                        </li>
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 2</a>
+                        </li>
+                        <li class="page-footer__nav-item">
+                            <a class="page-footer__nav-item-link">Link 3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
+            <div class="grid page-footer__bottom">
+                <div class="grid__col--sm-8 grid__col--xs-12 page-footer__bottom-copyright">
+                    <p>2022 © Max Mustermann.</p>
+                </div>
+                <div class="grid__col--sm-4 grid__col--xs-12 page-footer__bottom-legal">
+                    <a class="page-footer__bottom-legal-link" asp-area="" asp-controller="Legal" asp-action="Imprint">Impressum</a>
+                    <a class="page-footer__bottom-legal-link" asp-area="" asp-controller="Legal" asp-action="PrivacyPolicy">Datenschutz</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="base.bundle.js" async></script>
+        <script src="details.bundle.js" async></script>
+    </body>
+</html>

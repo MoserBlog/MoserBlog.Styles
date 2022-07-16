@@ -1,0 +1,16 @@
+@use '../../utilities/helpers';
+@use '../../base/colors';
+
+.button {
+    padding: helpers.px2rem(10px) helpers.px2rem(25px);
+    border: 0;
+    color: colors.$font-color-default;
+    background-color: colors.$separations;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover, &:focus, &:active {
+        opacity: 0.8;
+    }
+}
