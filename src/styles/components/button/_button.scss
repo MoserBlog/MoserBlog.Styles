@@ -7,6 +7,7 @@
     color: colors.$font-color-default;
     background-color: colors.$separations;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
 
     &:hover, &:focus, &:active {
