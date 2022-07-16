@@ -17,6 +17,7 @@
         text-transform: uppercase;
         font-size: helpers.px2rem(40px);
         transition: all .2s ease-in-out;
+        cursor: pointer;
 
         &:hover {
             opacity: 0.8;
@@ -24,6 +25,14 @@
 
         @include responsive.until('sm') {
             font-size: helpers.px2rem(37px);
+        }
+    }
+
+    &__image {
+        width: helpers.px2rem(100px);
+
+        @include responsive.until('sm') {
+            width: helpers.px2rem(80px);
         }
     }
 
